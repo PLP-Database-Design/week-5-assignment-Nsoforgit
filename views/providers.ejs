@@ -1,0 +1,69 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>provider_specialty List</h1>
+    
+    <% if (result.length > 0) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> Specialty </th>
+                    
+        
+                </tr>
+            </thead>
+            <tbody>
+                <% result.forEach(row =>{%>
+                    <tr>
+                        <td> <%= row.first_name %> </td>
+                        <td> <%= row.last_name %> </td>
+                        <td> <%= row.provider_specialty %> </td>
+                        
+                    </tr>
+                <%});%>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No provider found with the specified specialty.</p>
+    <% } %>
+</body>
+</html>
